@@ -65,13 +65,13 @@ function addTask() {
     let taskText = taskInput.value;
     const newTask = createTask(taskText, false);
 
-    tasks.push({ text: taskText, done: false });
+    tasks.unshift({ text: taskText, done: false });
     localStorage.setItem('tasks', JSON.stringify(tasks));
 
     taskInput.value = '';
     taskInput.focus();
 
-    tasksWrap.appendChild(newTask);
+    tasksWrap.prepend(newTask);
 
     result();
 }
