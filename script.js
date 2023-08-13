@@ -89,7 +89,11 @@ function removeTask(event) {
 
     result();
     
-    location.reload();
+    let total = document.querySelectorAll('.task').length;
+
+    if (total === 0) {
+        location.reload();
+    }
 }
 
 function completeTask(event) {
