@@ -64,7 +64,6 @@ h2 {
 
 .task.done {
     background-color: rgb(109, 95, 197);
-    color: white;
 }
 
 .task.done > span {

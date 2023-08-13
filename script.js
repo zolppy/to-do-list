@@ -7,7 +7,7 @@ const tasks = [];
 
 function createTask(taskText, isDone) {
     const task = document.createElement('div');
-    task.className = 'd-flex justify-content-between align-items-center mt-1 py-1 rounded-3 task';
+    task.className = 'd-flex justify-content-between align-items-center mt-1 py-1 rounded-3 border border-black task';
 
     const taskTextEl = document.createElement('span');
     taskTextEl.className = 'ms-1';
