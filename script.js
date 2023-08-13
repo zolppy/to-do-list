@@ -1,0 +1,132 @@
+// Este código deve ser limpo
+// This code must be cleaned
+
+const addButton = document.getElementById('add-button');
+const tasksWrap = document.getElementById('tasks-wrap');
+const tasks = [];
+
+function createTask(taskText, isDone) {
+    const task = document.createElement('div');
+    task.className = 'd-flex justify-content-between align-items-center mt-1 py-1 rounded-3 task';
+
+    const taskTextEl = document.createElement('span');
+    taskTextEl.className = 'ms-1';
+    taskTextEl.textContent = taskText;
+
+    const buttonsWrap = document.createElement('div');
+    buttonsWrap.className = 'buttons-wrap me-1';
+
+    const doneButton = document.createElement('button');
+    doneButton.type = 'button';
+    doneButton.className = 'done-button me-1 btn btn-primary';
+
+    const doneButtonIcon = document.createElement('i');
+    doneButtonIcon.className = 'bi bi-check2';
+
+    const deleteButton = document.createElement('button');
+    deleteButton.type = 'button';
+    deleteButton.className = 'delete-button btn btn-primary';
+
+    const deleteButtonIcon = document.createElement('i');
+    deleteButtonIcon.className = 'bi bi-trash';
+
+    doneButton.appendChild(doneButtonIcon);
+    deleteButton.appendChild(deleteButtonIcon);
+    buttonsWrap.appendChild(doneButton);
+    buttonsWrap.appendChild(deleteButton);
+    task.appendChild(taskTextEl);
+    task.appendChild(buttonsWrap);
+
+    if (isDone) {
+        task.classList.add('done');
+    }
+
+    return task;
+}
+
+function result() {
+    let total = document.querySelectorAll('.task').length;
+
+    if (total > 0) {
+        const resultWrap = document.getElementById('result-wrap');
+        const result = document.getElementById('result');
+        const hrs = document.querySelectorAll('.horizontal-line');
+        let doned = document.querySelectorAll('.done').length;
+    
+        resultWrap.classList.remove('hide');
+        hrs.forEach(hr => hr.classList.remove('hide'));
+    
+        result.textContent = `Completas: ${doned}/${total}`;
+    }
+}
+
+function addTask() {
+    const taskInput = document.getElementById('task-input');
+    let taskText = taskInput.value;
+    const newTask = createTask(taskText, false);
+
+    tasks.push({ text: taskText, done: false });
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+
+    taskInput.value = '';
+    taskInput.focus();
+
+    tasksWrap.appendChild(newTask);
+
+    result();
+}
+
+function removeTask(event) {
+    const taskElement = event.target.closest('.task');
+    const index = Array.from(tasksWrap.children).indexOf(taskElement);
+    
+    if (index !== -1) {
+        tasks.splice(index, 1);
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+    
+    taskElement.remove();
+
+    result();
+    
+    location.reload();
+}
+
+function completeTask(event) {
+    const taskElement = event.target.closest('.task');
+    const index = Array.from(tasksWrap.children).indexOf(taskElement);
+
+    if (index !== -1) {
+        tasks[index].done = !tasks[index].done;
+        localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+
+    taskElement.classList.toggle('done');
+
+    result();
+}
+
+addButton.addEventListener('click', addTask);
+tasksWrap.addEventListener('click', event => {
+    if (event.target.classList.contains('done-button')) {
+        completeTask(event);
+    }
+
+    if (event.target.classList.contains('delete-button')) {
+        removeTask(event);
+    }
+});
+
+window.addEventListener('load', () => {
+    if (localStorage.getItem('tasks') !== null) {
+        const storedTasks = JSON.parse(localStorage.getItem('tasks'));
+        tasks.push(...storedTasks);
+
+        for (const storedTask of storedTasks) {
+            const newTask = createTask(storedTask.text, storedTask.done);
+            tasksWrap.appendChild(newTask);
+        }
+
+        result();
+    }
+});

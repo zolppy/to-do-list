@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+/* Comfortaa light, regular, medium, semibold and bold */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
+
+/* font-family: 'Comfortaa', cursive; */
+
+body {
+    background-image: linear-gradient(to right, indigo, purple, blueviolet);
+    font-size: 1.1rem;
+    font-family: 'Comfortaa', cursive;
+}
+
+#to-do-list-wrap {
+    background-color: white;
+    max-width: 550px;
+}
+
+#to-do-list-wrap .btn,
+.task,
+.btn:hover,
+.task:hover,
+.task.done,
+.task.done > span {
+    transition: .3s ease-in;
+}
+
+h2 {
+    font-size: 1.3rem;
+}
+
+.hide {
+    display: none;
+}
+
+.btn > i {
+    pointer-events: none;
+}
+
+.btn,
+.btn:hover {
+    border: none;
+}
+
+.btn:hover {
+    filter: brightness(135%);
+}
+
+.btn:active {
+    filter: brightness(1);
+}
+
+.done-button,
+.done-button:hover,
+.done-button:active {
+    background-color: rgb(149, 209, 45);
+}
+
+.delete-button,
+.delete-button:hover,
+.delete-button:active {
+    background-color: rgb(204, 50, 81);
+}
+
+.task.done {
+    background-color: rgb(109, 95, 197);
+    color: white;
+}
+
+.task.done > span {
+    text-decoration: line-through;
+}
+
+@media screen and (min-width: 992px) {
+    .task:hover {
+        cursor: pointer;
+        background-color: #ccc;
+    }
+}
