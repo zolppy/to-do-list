@@ -1,6 +1,3 @@
-// Este código deve ser limpo
-// This code must be cleaned
-
 const addButton = document.getElementById('add-button');
 const tasksWrap = document.getElementById('tasks-wrap');
 const tasks = [];
@@ -96,6 +93,17 @@ function removeTask(event) {
     }
 }
 
+function removeCompleteTasks() {
+    const doneTasks = document.querySelectorAll('.done');
+    const removeCompleteTasksButtonWrap = document.getElementById('remove-complete-tasks-button-wrap');
+
+    if (doneTasks.length > 0) {
+        removeCompleteTasksButtonWrap.classList.remove('hide');
+    } else {
+        removeCompleteTasksButtonWrap.classList.add('hide');
+    }
+}
+
 function completeTask(event) {
     const taskElement = event.target.closest('.task');
     const index = Array.from(tasksWrap.children).indexOf(taskElement);
@@ -108,6 +116,7 @@ function completeTask(event) {
     taskElement.classList.toggle('done');
 
     result();
+    removeCompleteTasks();
 }
 
 addButton.addEventListener('click', addTask);
@@ -133,4 +142,24 @@ window.addEventListener('load', () => {
 
         result();
     }
+});
+
+const removeCompleteTasksButton = document.getElementById('remove-complete-tasks-button');
+
+removeCompleteTasksButton.addEventListener('click', () => {
+    const doneTasks = document.querySelectorAll('.done');
+
+    doneTasks.forEach(doneTask => {
+        const index = Array.from(tasksWrap.children).indexOf(doneTask);
+        if (index !== -1) {
+            tasks.splice(index, 1);
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+        }
+        
+        doneTask.remove();
+    });
+
+    removeCompleteTasks();
+    result();
+    location.reload();
 });
