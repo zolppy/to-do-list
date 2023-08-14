@@ -37,33 +37,8 @@ h2 {
     pointer-events: none;
 }
 
-.btn,
-.btn:hover {
-    border: none;
-}
-
-.btn:hover {
-    filter: brightness(135%);
-}
-
-.btn:active {
-    filter: brightness(1);
-}
-
-.done-button,
-.done-button:hover,
-.done-button:active {
-    background-color: rgb(149, 209, 45);
-}
-
-.delete-button,
-.delete-button:hover,
-.delete-button:active {
-    background-color: rgb(204, 50, 81);
-}
-
 .task.done {
-    background-color: rgb(109, 95, 197);
+    background-color: var(--bs-info);
 }
 
 .task.done > span {

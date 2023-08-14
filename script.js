@@ -17,14 +17,14 @@ function createTask(taskText, isDone) {
 
     const doneButton = document.createElement('button');
     doneButton.type = 'button';
-    doneButton.className = 'done-button me-1 btn btn-primary';
+    doneButton.className = 'done-button me-1 btn btn-success';
 
     const doneButtonIcon = document.createElement('i');
     doneButtonIcon.className = 'bi bi-check2';
 
     const deleteButton = document.createElement('button');
     deleteButton.type = 'button';
-    deleteButton.className = 'delete-button btn btn-primary';
+    deleteButton.className = 'delete-button btn btn-danger';
 
     const deleteButtonIcon = document.createElement('i');
     deleteButtonIcon.className = 'bi bi-trash';
