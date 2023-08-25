@@ -57,6 +57,10 @@ function result() {
 
     result.textContent = `Completas: ${doned}/${total}`;
   }
+  
+  if (total === 0) {
+    location.reload();
+  }
 }
 
 function addTask() {
@@ -85,14 +89,8 @@ function removeTask(event) {
   }
   
   taskElement.remove();
-
-  result();
   
-  let total = document.querySelectorAll('.task').length;
-
-  if (total === 0) {
-    location.reload();
-  }
+  result();
 }
 
 function removeCompleteTasks() {
@@ -117,8 +115,8 @@ function completeTask(event) {
 
   taskElement.classList.toggle('done');
 
-  result();
   removeCompleteTasks();
+  result();
 }
 
 addButton.addEventListener('click', addTask);
@@ -142,8 +140,8 @@ window.addEventListener('load', () => {
       tasksWrap.appendChild(newTask);
     }
 
-    result();
     removeCompleteTasks();
+    result();
   }
 });
 
