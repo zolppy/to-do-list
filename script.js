@@ -57,10 +57,6 @@ function result() {
 
     result.textContent = `Completas: ${doned}/${total}`;
   }
-  
-  if (total === 0) {
-    location.reload();
-  }
 }
 
 function addTask() {
@@ -91,6 +87,10 @@ function removeTask(event) {
   taskElement.remove();
   
   result();
+
+  if (document.querySelectorAll('.task').length === 0) {
+    location.reload();
+  }
 }
 
 function removeCompleteTasks() {
@@ -163,6 +163,11 @@ removeCompleteTasksButton.addEventListener('click', () => {
   
     removeCompleteTasks();
     result();
+
+    if (document.querySelectorAll('.task').length === 0) {
+      location.reload();
+    }
+
     alert('Tarefas removidas com sucesso.');
   }
 });
