@@ -163,11 +163,11 @@ removeCompleteTasksButton.addEventListener('click', () => {
   
     removeCompleteTasks();
     result();
+    
+    alert('Tarefas removidas com sucesso.');
 
     if (document.querySelectorAll('.task').length === 0) {
       location.reload();
     }
-
-    alert('Tarefas removidas com sucesso.');
   }
 });
