@@ -9,7 +9,6 @@ body {
   background-color: var(--primary-color);
   background-image: url('sm-02.jpg');
   background-size: cover;
-  background-repeat: no-repeat;
   font-size: 1.1rem;
   font-family: 'Comfortaa', cursive;
 }
@@ -53,7 +52,6 @@ h2 {
   body {
     background-image: url('lg-04.jpg');
     background-size: cover;
-    background-repeat: no-repeat;
   }
 
   .task:hover {
