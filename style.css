@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
 :root {
-  --primary-color: #4b0082; /* Indigo */
-  --secondary-color: #800080; /* Purple */
+  --primary-color: #f00; /* Red */
+  --secondary-color: #ffa500; /* Orange */
   --transition: .3s ease-in;
 }
 
@@ -22,7 +22,8 @@ body {
 .btn:hover,
 .task:hover,
 .task.done,
-.task.done > span {
+.task.done > span,
+.hide {
   transition: var(--transition);
 }
 
