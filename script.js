@@ -88,6 +88,8 @@ function removeTask(event) {
     taskElement.remove();
     
     result();
+
+    alert('Tarefa removida com sucesso!');
   
     if (document.querySelectorAll('.task').length === 0) {
       location.reload();
@@ -166,7 +168,7 @@ removeCompleteTasksButton.addEventListener('click', () => {
     removeCompleteTasks();
     result();
     
-    alert('Tarefas removidas com sucesso.');
+    alert('Tarefas removidas com sucesso!');
 
     if (document.querySelectorAll('.task').length === 0) {
       location.reload();

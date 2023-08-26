@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 :root {
-  --primary-color: #00f;
+  --primary-color: indigo;
   --transition: .3s ease-in;
 }
 
