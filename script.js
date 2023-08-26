@@ -76,20 +76,22 @@ function addTask() {
 }
 
 function removeTask(event) {
-  const taskElement = event.target.closest('.task');
-  const index = Array.from(tasksWrap.children).indexOf(taskElement);
+  if (confirm("Tem certeza que deseja excluir a tarefa?")) {
+    const taskElement = event.target.closest('.task');
+    const index = Array.from(tasksWrap.children).indexOf(taskElement);
+    
+    if (index !== -1) {
+      tasks.splice(index, 1);
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+    
+    taskElement.remove();
+    
+    result();
   
-  if (index !== -1) {
-    tasks.splice(index, 1);
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-  }
-  
-  taskElement.remove();
-  
-  result();
-
-  if (document.querySelectorAll('.task').length === 0) {
-    location.reload();
+    if (document.querySelectorAll('.task').length === 0) {
+      location.reload();
+    }
   }
 }
 

@@ -1,13 +1,12 @@
 @charset "UTF-8";
 
 :root {
-  --primary-color: #f00; /* Red */
-  --secondary-color: #ffa500; /* Orange */
+  --primary-color: #00f;
   --transition: .3s ease-in;
 }
 
 body {
-  background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  background-color: var(--primary-color);
   font-size: 1.1rem;
   font-family: 'Comfortaa', cursive;
 }
