@@ -9,7 +9,7 @@
 
 body {
   background-color: var(--primary-color);
-  background-image: url('img/sm-bg.jpg');
+  background-image: url('sm-bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -54,15 +54,11 @@ h2 {
 
 @media screen and (min-width: 768px) { /* Medium */
   body {
-    background-image: url('img/lg-md-bg.jpg');
+    background-image: url('bg.jpg');
   }
 }
 
 @media screen and (min-width: 992px) { /* Large */
-  body {
-    background-image: url('img/lg-md-bg.jpg');
-  }
-
   .task:hover {
     cursor: pointer;
     background-color: #ccc;
