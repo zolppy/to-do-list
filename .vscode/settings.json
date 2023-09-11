@@ -1,0 +1,15 @@
+{
+  // Configurações globais
+  "editor.fontSize": 12,
+  "editor.tabSize": 2,
+  "editor.lineHeight": 0,
+  "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace",
+  "workbench.colorTheme": "Monokai",
+  "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 80,
+  "editor.wrappingIndent": "indent",
+
+  // Configurações de formatação automática
+  "editor.formatOnSave": false,
+  "editor.formatOnType": false,
+}
