@@ -1,5 +1,3 @@
-// Este código está podre, eu sei. Vou limpá-lo depois. É que eu estava com pressa :)
-
 const addButton = document.getElementById('add-button');
 const tasksWrap = document.getElementById('tasks-wrap');
 const tasks = [];

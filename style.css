@@ -6,13 +6,15 @@
 }
 
 /* Images acquired at https://www.pexels.com/pt-br/ */
+
 body {
   background-color: var(--primary-color);
   background-image: url('img/sm-bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   font-size: 1.1rem;
-  font-family: 'Comfortaa', cursive;
+  font-family: 'Comfortaa', sans-serif;
 }
 
 #to-do-list-wrap {
@@ -53,16 +55,12 @@ h2 {
 @media screen and (min-width: 768px) { /* Medium */
   body {
     background-image: url('img/md-bg.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
   }
 }
 
 @media screen and (min-width: 992px) { /* Large */
   body {
     background-image: url('img/lg-bg.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
   }
 
   .task:hover {
