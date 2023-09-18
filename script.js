@@ -1,3 +1,5 @@
+// Este código precisa ser "limpo", mas a aplicação está funcional
+
 const addButton = document.getElementById('add-button');
 const tasksWrap = document.getElementById('tasks-wrap');
 const tasks = [];
