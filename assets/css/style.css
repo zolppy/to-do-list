@@ -9,7 +9,7 @@
 
 body {
   background-color: var(--primary-color);
-  background-image: url('sm-bg.jpg');
+  background-image: url('../img/sm-bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -54,7 +54,7 @@ h2 {
 
 @media screen and (min-width: 768px) { /* Telas médias */
   body {
-    background-image: url('bg.jpg');
+    background-image: url('../img/bg.jpg');
   }
 }
 
