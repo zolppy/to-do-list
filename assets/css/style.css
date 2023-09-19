@@ -17,12 +17,12 @@ body {
   font-family: 'Comfortaa', sans-serif;
 }
 
-#to-do-list-wrap {
+#to-do-list-container {
   background-color: white;
   max-width: 550px;
 }
 
-#to-do-list-wrap .btn,
+#to-do-list-container .btn,
 .task,
 .btn:hover,
 .task:hover,

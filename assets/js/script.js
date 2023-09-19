@@ -1,47 +1,48 @@
-const addTaskButton = document.querySelector('#add-button');
-const tasksContainer = document.querySelector('#tasks-wrap');
+const addTaskButton = document.querySelector('#add-task-button');
+const tasksContainer = document.querySelector('#tasks-container');
+const removeCompleteTasksButton = document.querySelector('#remove-complete-tasks-button');
 const tasks = [];
 
-function createTask(taskDescription, taskIsDone) {
+const createTask = (taskDescription, taskIsDone) => {
   const task = document.createElement('div');
   task.className = 'd-flex justify-content-between align-items-center mt-1 py-1 rounded-3 border border-black task';
-
+  
   const taskDescriptionEl = document.createElement('span');
   taskDescriptionEl.className = 'ms-1';
   taskDescriptionEl.textContent = taskDescription;
-
-  const buttonsWrap = document.createElement('div');
-  buttonsWrap.className = 'buttons-wrap me-1';
-
+  
+  const buttonsContainer = document.createElement('div');
+  buttonsContainer.className = 'buttons-container me-1';
+  
   const doneButton = document.createElement('button');
   doneButton.type = 'button';
   doneButton.className = 'done-button me-1 btn btn-success';
-
+  
   const doneButtonIcon = document.createElement('i');
   doneButtonIcon.className = 'bi bi-check2';
-
+  
   const deleteButton = document.createElement('button');
   deleteButton.type = 'button';
   deleteButton.className = 'delete-button btn btn-danger';
-
+  
   const deleteButtonIcon = document.createElement('i');
   deleteButtonIcon.className = 'bi bi-trash';
-
+  
   doneButton.appendChild(doneButtonIcon);
   deleteButton.appendChild(deleteButtonIcon);
-  buttonsWrap.appendChild(doneButton);
-  buttonsWrap.appendChild(deleteButton);
+  buttonsContainer.appendChild(doneButton);
+  buttonsContainer.appendChild(deleteButton);
   task.appendChild(taskDescriptionEl);
-  task.appendChild(buttonsWrap);
-
+  task.appendChild(buttonsContainer);
+  
   if (taskIsDone) {
     task.classList.add('done');
   }
-
+  
   return task;
 }
 
-function addTask() {
+const addTask = () => {
   const taskInputElement = document.querySelector('#task-input');
   let taskDescription = taskInputElement.value;
   const newTask = createTask(taskDescription, false);
@@ -57,9 +58,9 @@ function addTask() {
   displayResults();
 }
 
-function removeTask(event) {
+const removeTask = (e) => {
   if (confirm("Tem certeza que deseja excluir a tarefa?")) {
-    const taskElement = event.target.closest('.task');
+    const taskElement = e.target.closest('.task');
     const index = Array.from(tasksContainer.children).indexOf(taskElement);
     
     if (index !== -1) {
@@ -77,9 +78,9 @@ function removeTask(event) {
   }
 }
 
-function checkCompletedTasks() {
+const checkCompletedTasks = () => {
   const doneTaskElements = document.querySelectorAll('.done');
-  const removeCompleteTasksButtonContainer = document.querySelector('#remove-complete-tasks-button-wrap');
+  const removeCompleteTasksButtonContainer = document.querySelector('#remove-complete-tasks-button-container');
 
   if (doneTaskElements.length > 0) {
     removeCompleteTasksButtonContainer.classList.remove('hide');
@@ -88,7 +89,29 @@ function checkCompletedTasks() {
   }
 }
 
-function completeTask(e) {
+const displayResults = () => {
+  let tasksTotal = document.querySelectorAll('.task').length;
+
+  if (tasksTotal > 0) {
+    const resultsContainer = document.querySelector('#result-container');
+    const resultElement = document.querySelector('#result');
+    const horizontalLines = document.querySelectorAll('.horizontal-line');
+    let tasksDoned = document.querySelectorAll('.done').length;
+
+    resultsContainer.classList.remove('hide');
+    horizontalLines.forEach(horizontalLine => horizontalLine.classList.remove('hide'));
+
+    resultElement.textContent = `Completas: ${tasksDoned}/${tasksTotal}`;
+  }
+}
+
+const reloadPageIfNoTasks = () => {
+  if (document.querySelectorAll('.task').length === 0) {
+    location.reload();
+  }
+}
+
+const completeTask = (e) => {
   const taskElement = e.target.closest('.task');
   const index = Array.from(tasksContainer.children).indexOf(taskElement);
 
@@ -127,30 +150,6 @@ window.addEventListener('load', () => {
     displayResults();
   }
 });
-
-function displayResults() {
-  let tasksTotal = document.querySelectorAll('.task').length;
-
-  if (tasksTotal > 0) {
-    const resultsContainer = document.querySelector('#result-wrap');
-    const resultElement = document.querySelector('#result');
-    const horizontalLines = document.querySelectorAll('.horizontal-line');
-    let tasksDoned = document.querySelectorAll('.done').length;
-
-    resultsContainer.classList.remove('hide');
-    horizontalLines.forEach(horizontalLine => horizontalLine.classList.remove('hide'));
-
-    resultElement.textContent = `Completas: ${tasksDoned}/${tasksTotal}`;
-  }
-}
-
-function reloadPageIfNoTasks() {
-  if (document.querySelectorAll('.task').length === 0) {
-    location.reload();
-  }
-}
-
-const removeCompleteTasksButton = document.querySelector('#remove-complete-tasks-button');
 
 removeCompleteTasksButton.addEventListener('click', () => {
   if (confirm("Tem certeza que deseja excluir tarefas concluídas?")) {
