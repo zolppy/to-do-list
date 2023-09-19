@@ -5,7 +5,7 @@
   --transition: .3s ease-in;
 }
 
-/* Images acquired at https://www.pexels.com/pt-br/ */
+/* Imagens adquiridas em: https://www.pexels.com/pt-br/ */
 
 body {
   background-color: var(--primary-color);
@@ -52,13 +52,13 @@ h2 {
   text-decoration: line-through;
 }
 
-@media screen and (min-width: 768px) { /* Medium */
+@media screen and (min-width: 768px) { /* Telas médias */
   body {
     background-image: url('bg.jpg');
   }
 }
 
-@media screen and (min-width: 992px) { /* Large */
+@media screen and (min-width: 992px) { /* Telas largas */
   .task:hover {
     cursor: pointer;
     background-color: #ccc;

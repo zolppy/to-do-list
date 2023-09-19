@@ -1,16 +1,14 @@
-// Este código precisa ser "limpo", mas a aplicação está funcional
-
-const addButton = document.getElementById('add-button');
-const tasksWrap = document.getElementById('tasks-wrap');
+const addTaskButton = document.querySelector('#add-button');
+const tasksContainer = document.querySelector('#tasks-wrap');
 const tasks = [];
 
-function createTask(taskText, isDone) {
+function createTask(taskDescription, taskIsDone) {
   const task = document.createElement('div');
   task.className = 'd-flex justify-content-between align-items-center mt-1 py-1 rounded-3 border border-black task';
 
-  const taskTextEl = document.createElement('span');
-  taskTextEl.className = 'ms-1';
-  taskTextEl.textContent = taskText;
+  const taskDescriptionEl = document.createElement('span');
+  taskDescriptionEl.className = 'ms-1';
+  taskDescriptionEl.textContent = taskDescription;
 
   const buttonsWrap = document.createElement('div');
   buttonsWrap.className = 'buttons-wrap me-1';
@@ -33,52 +31,36 @@ function createTask(taskText, isDone) {
   deleteButton.appendChild(deleteButtonIcon);
   buttonsWrap.appendChild(doneButton);
   buttonsWrap.appendChild(deleteButton);
-  task.appendChild(taskTextEl);
+  task.appendChild(taskDescriptionEl);
   task.appendChild(buttonsWrap);
 
-  if (isDone) {
+  if (taskIsDone) {
     task.classList.add('done');
   }
 
   return task;
 }
 
-function result() {
-  let total = document.querySelectorAll('.task').length;
-
-  if (total > 0) {
-    const resultWrap = document.getElementById('result-wrap');
-    const result = document.getElementById('result');
-    const hrs = document.querySelectorAll('.horizontal-line');
-    let doned = document.querySelectorAll('.done').length;
-
-    resultWrap.classList.remove('hide');
-    hrs.forEach(hr => hr.classList.remove('hide'));
-
-    result.textContent = `Completas: ${doned}/${total}`;
-  }
-}
-
 function addTask() {
-  const taskInput = document.getElementById('task-input');
-  let taskText = taskInput.value;
-  const newTask = createTask(taskText, false);
+  const taskInputElement = document.querySelector('#task-input');
+  let taskDescription = taskInputElement.value;
+  const newTask = createTask(taskDescription, false);
 
-  tasks.unshift({ text: taskText, done: false });
+  tasks.unshift({ text: taskDescription, done: false });
   localStorage.setItem('tasks', JSON.stringify(tasks));
 
-  taskInput.value = '';
-  taskInput.focus();
+  taskInputElement.value = '';
+  taskInputElement.focus();
 
-  tasksWrap.prepend(newTask);
+  tasksContainer.prepend(newTask);
 
-  result();
+  displayResults();
 }
 
 function removeTask(event) {
   if (confirm("Tem certeza que deseja excluir a tarefa?")) {
     const taskElement = event.target.closest('.task');
-    const index = Array.from(tasksWrap.children).indexOf(taskElement);
+    const index = Array.from(tasksContainer.children).indexOf(taskElement);
     
     if (index !== -1) {
       tasks.splice(index, 1);
@@ -87,30 +69,28 @@ function removeTask(event) {
     
     taskElement.remove();
     
-    result();
+    checkCompletedTasks();
+    displayResults();
+    reloadPageIfNoTasks();
 
     alert('Tarefa removida com sucesso!');
-  
-    if (document.querySelectorAll('.task').length === 0) {
-      location.reload();
-    }
   }
 }
 
-function removeCompleteTasks() {
-  const doneTasks = document.querySelectorAll('.done');
-  const removeCompleteTasksButtonWrap = document.getElementById('remove-complete-tasks-button-wrap');
+function checkCompletedTasks() {
+  const doneTaskElements = document.querySelectorAll('.done');
+  const removeCompleteTasksButtonContainer = document.querySelector('#remove-complete-tasks-button-wrap');
 
-  if (doneTasks.length > 0) {
-    removeCompleteTasksButtonWrap.classList.remove('hide');
+  if (doneTaskElements.length > 0) {
+    removeCompleteTasksButtonContainer.classList.remove('hide');
   } else {
-    removeCompleteTasksButtonWrap.classList.add('hide');
+    removeCompleteTasksButtonContainer.classList.add('hide');
   }
 }
 
-function completeTask(event) {
-  const taskElement = event.target.closest('.task');
-  const index = Array.from(tasksWrap.children).indexOf(taskElement);
+function completeTask(e) {
+  const taskElement = e.target.closest('.task');
+  const index = Array.from(tasksContainer.children).indexOf(taskElement);
 
   if (index !== -1) {
     tasks[index].done = !tasks[index].done;
@@ -118,19 +98,18 @@ function completeTask(event) {
   }
 
   taskElement.classList.toggle('done');
-
-  removeCompleteTasks();
-  result();
+  checkCompletedTasks();
+  displayResults();
 }
 
-addButton.addEventListener('click', addTask);
-tasksWrap.addEventListener('click', event => {
-  if (event.target.classList.contains('done-button')) {
-    completeTask(event);
+addTaskButton.addEventListener('click', addTask);
+tasksContainer.addEventListener('click', e => {
+  if (e.target.classList.contains('done-button')) {
+    completeTask(e);
   }
 
-  if (event.target.classList.contains('delete-button')) {
-    removeTask(event);
+  if (e.target.classList.contains('delete-button')) {
+    removeTask(e);
   }
 });
 
@@ -141,22 +120,45 @@ window.addEventListener('load', () => {
 
     for (const storedTask of storedTasks) {
       const newTask = createTask(storedTask.text, storedTask.done);
-      tasksWrap.appendChild(newTask);
+      tasksContainer.appendChild(newTask);
     }
 
-    removeCompleteTasks();
-    result();
+    checkCompletedTasks();
+    displayResults();
   }
 });
 
-const removeCompleteTasksButton = document.getElementById('remove-complete-tasks-button');
+function displayResults() {
+  let tasksTotal = document.querySelectorAll('.task').length;
+
+  if (tasksTotal > 0) {
+    const resultsContainer = document.querySelector('#result-wrap');
+    const resultElement = document.querySelector('#result');
+    const horizontalLines = document.querySelectorAll('.horizontal-line');
+    let tasksDoned = document.querySelectorAll('.done').length;
+
+    resultsContainer.classList.remove('hide');
+    horizontalLines.forEach(horizontalLine => horizontalLine.classList.remove('hide'));
+
+    resultElement.textContent = `Completas: ${tasksDoned}/${tasksTotal}`;
+  }
+}
+
+function reloadPageIfNoTasks() {
+  if (document.querySelectorAll('.task').length === 0) {
+    location.reload();
+  }
+}
+
+const removeCompleteTasksButton = document.querySelector('#remove-complete-tasks-button');
 
 removeCompleteTasksButton.addEventListener('click', () => {
   if (confirm("Tem certeza que deseja excluir tarefas concluídas?")) {
-    const doneTasks = document.querySelectorAll('.done');
+    const doneTaskElements = document.querySelectorAll('.done');
 
-    doneTasks.forEach(doneTask => {
-      const index = Array.from(tasksWrap.children).indexOf(doneTask);
+    doneTaskElements.forEach(doneTask => {
+      const index = Array.from(tasksContainer.children).indexOf(doneTask);
+
       if (index !== -1) {
         tasks.splice(index, 1);
         localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -164,14 +166,12 @@ removeCompleteTasksButton.addEventListener('click', () => {
       
       doneTask.remove();
     });
-  
-    removeCompleteTasks();
-    result();
     
-    alert('Tarefas removidas com sucesso!');
+    
+    checkCompletedTasks();
+    displayResults();
+    reloadPageIfNoTasks();
 
-    if (document.querySelectorAll('.task').length === 0) {
-      location.reload();
-    }
+    alert('Tarefas removidas com sucesso!');
   }
 });
