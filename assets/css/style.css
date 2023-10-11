@@ -1,14 +1,12 @@
 @charset "UTF-8";
 
 :root {
-  --primary-color: #333;
+  --soft-black: #333;
   --transition: .3s ease-in;
 }
 
-/* Imagens adquiridas em: https://www.pexels.com/pt-br/ */
-
 body {
-  background-color: var(--primary-color);
+  background-color: var(--soft-black);
   background-image: url('../img/sm-bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;

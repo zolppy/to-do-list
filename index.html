@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lista de Tarefas</title>
   <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon" />
   <!-- Bootstrap -->
@@ -25,7 +25,12 @@
         <h2 class="text-center my-4">Informe tarefas abaixo</h2>
         <form autocomplete="off">
           <div class="d-flex">
-            <input type="text" class="me-1 form-control" id="task-input" aria-describedby="Informe uma tarefa a realizar" placeholder="Ler um livro">
+            <input
+              type="text"
+              class="me-1 form-control" id="task-input"
+              aria-describedby="Informe uma tarefa a realizar"
+              placeholder="Ler um livro"
+            />
             <button id="add-task-button" type="button" class="btn btn-primary">
               <i class="bi bi-plus-lg"></i>
             </button>
@@ -41,7 +46,7 @@
         </div>
         <div id="remove-complete-tasks-button-container" class="mt-4 hide">
           <button id="remove-complete-tasks-button" type="button" class="btn btn-danger w-100">
-            Remover tarefas concluídas
+            <span>Remover tarefas concluídas</span>
           </button>
         </div>
       </div>

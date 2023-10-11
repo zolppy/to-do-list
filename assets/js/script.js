@@ -45,9 +45,11 @@ const createTask = (taskDescription, taskIsDone) => {
 const addTask = () => {
   const taskInputElement = document.querySelector('#task-input');
   let taskDescription = taskInputElement.value;
-  const newTask = createTask(taskDescription, false);
+  let taskDescriptionTreated = taskDescription[0].toUpperCase() + taskDescription.slice(1);
 
-  tasks.unshift({ text: taskDescription, done: false });
+  const newTask = createTask(taskDescriptionTreated, false);
+
+  tasks.unshift({ text: taskDescriptionTreated, done: false });
   localStorage.setItem('tasks', JSON.stringify(tasks));
 
   taskInputElement.value = '';
@@ -73,8 +75,6 @@ const removeTask = (e) => {
     checkCompletedTasks();
     displayResults();
     reloadPageIfNoTasks();
-
-    alert('Tarefa removida com sucesso!');
   }
 }
 
@@ -170,7 +170,5 @@ removeCompleteTasksButton.addEventListener('click', () => {
     checkCompletedTasks();
     displayResults();
     reloadPageIfNoTasks();
-
-    alert('Tarefas removidas com sucesso!');
   }
 });
