@@ -17,6 +17,7 @@ const createTask = (taskDescription, taskIsDone) => {
   const doneButton = document.createElement('button');
   doneButton.type = 'button';
   doneButton.className = 'done-button me-1 btn btn-success';
+  doneButton.ariaLabel = 'Completar tarefa';
   
   const doneButtonIcon = document.createElement('i');
   doneButtonIcon.className = 'bi bi-check2';
@@ -24,6 +25,7 @@ const createTask = (taskDescription, taskIsDone) => {
   const deleteButton = document.createElement('button');
   deleteButton.type = 'button';
   deleteButton.className = 'delete-button btn btn-danger';
+  deleteButton.ariaLabel = 'Remover tarefa';
   
   const deleteButtonIcon = document.createElement('i');
   deleteButtonIcon.className = 'bi bi-trash';
@@ -113,6 +115,7 @@ const reloadPageIfNoTasks = () => {
 
 const completeTask = (e) => {
   const taskElement = e.target.closest('.task');
+  const doneButton = taskElement.querySelector('.done-button');
   const index = Array.from(tasksContainer.children).indexOf(taskElement);
 
   if (index !== -1) {
@@ -121,6 +124,11 @@ const completeTask = (e) => {
   }
 
   taskElement.classList.toggle('done');
+  if (taskElement.classList.contains('done')) {
+    doneButton.ariaLabel = 'Descompletar tarefa';
+  } else {
+    doneButton.ariaLabel = 'Completar tarefa';
+  }
   checkCompletedTasks();
   displayResults();
 }
