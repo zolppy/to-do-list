@@ -22,4 +22,5 @@ Aplicação que permite criação e gerenciamento de tarefas. Foram considerados
 ## Principais tecnologias que podem vir a serem utilizadas
 * React;
 * Typescript;
+* BEM;
 * SASS.
