@@ -14,10 +14,10 @@ Aplicação que permite criação e gerenciamento de tarefas. Foram considerados
 * Pesquisar tarefas por categorias ou estados (concluído ou não concluído).
 
 ## Principais tecnologias utilizadas
-* HTML5
-* CSS3
-* JavaScript
-* Bootstrap
+* HTML5;
+* CSS3;
+* JavaScript;
+* Bootstrap.
 
 ## Principais tecnologias que podem vir a serem utilizadas
 * React;
