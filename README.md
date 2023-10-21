@@ -1,6 +1,6 @@
 # To-do list
 
-Aplicação que permite criação e gerenciamento de tarefas. Foram considerados aspectos básicos de SEO (Search Engine Optimization), WPO (Web Performance Optimization) e acessibilidade, além, é claro, de boas práticas de desenvolvimento de software. A interface é intuitiva e agradável.
+Aplicação com interface intuitiva e agradável, construída a partir de boas práticas de desenvolvimento de software, que permite criação e gerenciamento de tarefas.
 
 ## O que é possível fazer
 * Criar tarefas;
