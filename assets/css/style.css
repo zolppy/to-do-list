@@ -1,12 +1,5 @@
 @charset "UTF-8";
 
-@font-face {
-  font-family: Comfortaa;
-  font-style: normal;
-  src: url('../font/comfortaa/Comfortaa-Regular.ttf');
-  font-display: swap;
-}
-
 :root {
   --soft-black: #333;
 }
@@ -18,7 +11,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   font-size: 1.1rem;
-  font-family: Comfortaa;
+  font-family: 'Comfortaa', sans-serif;
 }
 
 #to-do-list-container {
