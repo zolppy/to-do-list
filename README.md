@@ -23,4 +23,4 @@ Aplicação que permite criação e gerenciamento de tarefas. Foram considerados
 * React;
 * Typescript;
 * BEM;
-* SASS.
+* SASS ou SCSS.
