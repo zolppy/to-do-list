@@ -13,13 +13,13 @@ Aplicação com interface intuitiva e agradável, construída a partir de boas p
 * Adicionar categorias às tarefas (pessoal, trabalho, estudo);
 * Pesquisar tarefas por categorias ou estados (concluído ou não concluído).
 
-## Principais tecnologias utilizadas
+## Principais conceitos ou tecnologias utilizados
 * HTML5;
 * CSS3;
 * JavaScript;
 * Bootstrap.
 
-## Principais tecnologias que podem vir a serem utilizadas
+## Principais conceitos ou tecnologias que podem vir a serem utilizados
 * React;
 * Typescript;
 * BEM;
