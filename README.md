@@ -5,24 +5,23 @@ considerados aspectos básicos de SEO e performance, além, é claro, de boas pr
 intuitiva e agradável.
 
 ## O que é possível fazer
-. Criar tarefas;
-. Marcar tarefa como concluída ou não concluída;
-. Remover uma tarefa;
-. Remover tarefas concluídas.
+* Criar tarefas;
+* Marcar tarefa como concluída ou não concluída;
+* Remover uma tarefa;
+* Remover tarefas concluídas.
 
 ## O que ainda não é possível fazer
-. Editar tarefas;
-. Adicionar categorias às tarefas (pessoal, trabalho, estudo);
-. Pesquisar tarefas por categorias ou estados (concluído ou não concluído).
+* Editar tarefas;
+* Adicionar categorias às tarefas (pessoal, trabalho, estudo);
+* Pesquisar tarefas por categorias ou estados (concluído ou não concluído).
 
 ## Principais tecnologias utilizadas
-. HTML5
-. CSS3
-. JavaScript
-. Bootstrap
+* HTML5
+* CSS3
+* JavaScript
+* Bootstrap
 
 ## Principais tecnologias que podem vir a serem utilizadas
-. React
-. Typescript
-. SASS
-#
+* React
+* Typescript
+* SASS
