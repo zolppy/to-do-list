@@ -20,6 +20,6 @@ Aplicação que permite criação e gerenciamento de tarefas. Foram considerados
 * Bootstrap
 
 ## Principais tecnologias que podem vir a serem utilizadas
-* React
-* Typescript
-* SASS
+* React;
+* Typescript;
+* SASS.
