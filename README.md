@@ -23,4 +23,4 @@ Aplicação com interface intuitiva e agradável, construída a partir de boas p
 * React;
 * Typescript;
 * BEM;
-* SASS ou SCSS.
+* SCSS.
