@@ -5,7 +5,7 @@ Aplicação com interface intuitiva e agradável, construída a partir de boas p
 ## O que é possível fazer
 * Criar tarefas;
 * Marcar tarefa como concluída ou não concluída;
-* Remover uma tarefa;
+* Remover tarefa;
 * Remover tarefas concluídas.
 
 ## Melhorias futuras
