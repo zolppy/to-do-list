@@ -1,4 +1,4 @@
-# To-do list
+# To-do List
 
 Aplicação com interface intuitiva e agradável, construída a partir de boas práticas de desenvolvimento de software, que permite criação e gerenciamento de tarefas.
 
@@ -8,7 +8,7 @@ Aplicação com interface intuitiva e agradável, construída a partir de boas p
 * Remover uma tarefa;
 * Remover tarefas concluídas.
 
-## O que ainda não é possível fazer
+## Melhorias futuras
 * Editar tarefas;
 * Adicionar categorias às tarefas (pessoal, trabalho, estudo);
 * Pesquisar tarefas por categorias ou estados (concluído ou não concluído).
