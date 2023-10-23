@@ -2,7 +2,7 @@
 
 Aplicação com interface intuitiva e agradável, construída a partir de boas práticas de desenvolvimento de software, que permite criação e gerenciamento de tarefas.
 
-## O que é possível fazer
+## O que tem ou pode realizar
 * Criar tarefas;
 * Marcar tarefa como concluída ou não concluída;
 * Remover tarefa;
