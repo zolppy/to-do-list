@@ -76,22 +76,19 @@ const checkCompletedTasks = () => {
   const doneTaskElements = document.querySelectorAll('.done');
   const removeCompleteTasksButtonContainer = document.querySelector('#remove-complete-tasks-button-container');
 
-  removeCompleteTasksButtonContainer.classList.toggle('hide', doneTaskElements.length === 0);
+  removeCompleteTasksButtonContainer.classList.toggle('hidden', doneTaskElements.length === 0);
 };
 
 const updateDisplayResults = () => {
   const tasksTotal = document.querySelectorAll('.task').length;
 
   if (tasksTotal > 0) {
-    const resultsContainer = document.querySelector('#result-container');
-    const resultElement = document.querySelector('#result');
-    const horizontalLines = document.querySelectorAll('.horizontal-line');
+    const resultsContainer = document.querySelector('#completed-tasks-total-container');
+    const resultElement = document.querySelector('#completed-tasks-total');
     const tasksDone = document.querySelectorAll('.done').length;
 
-    resultsContainer.classList.remove('hide');
-    horizontalLines.forEach(horizontalLine => horizontalLine.classList.remove('hide'));
-
     resultElement.textContent = `Completas: ${tasksDone}/${tasksTotal}`;
+    resultsContainer.classList.remove('hidden');
   }
 };
 

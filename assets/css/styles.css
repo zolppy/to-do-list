@@ -5,7 +5,12 @@ html {
 }
 
 :root {
-  --soft-black: #333;
+  --black: #333;
+  --white: #fff;
+  --black-low-opacity: rgba(0, 0, 0, .2);
+  --red: #f66;
+  --green: #6f6;
+  --blue: #66f;
 }
 
 * {
@@ -19,13 +24,14 @@ body {
   background-image: url('../img/sm-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  color: var(--black);
   font-family: 'Comfortaa', sans-serif;
   font-size: 1rem;
   font-weight: 400;
 }
 
 #container {
-  background-color: #fff;
+  background-color: var(--white);
   border-radius: 15px;
   margin: 2% auto;
   max-width: 550px;
@@ -53,7 +59,7 @@ body {
 }
 
 #add-task-input {
-  border: 1px solid rgba(0, 0, 0, .2);
+  border: 1px solid var(--black-low-opacity);
   border-radius: .5em;
   flex-grow: 7;
   height: 2.6em;
@@ -61,9 +67,9 @@ body {
 }
 
 #add-task-button {
-  border: 1px solid #66f;
-  color: #66f;
-  background-color: #fff;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  background-color: var(--white);
   font-size: 1.3rem;
   border-radius: 50%;
   flex-grow: 1;
@@ -71,12 +77,20 @@ body {
 }
 
 #add-task-button:hover {
-  background-color: #66f;
-  color: #fff;
+  background-color: var(--blue);
+  color: var(--white);
 }
 
 #add-task-button:active {
   transform: scale(.95);
+}
+
+#completed-tasks-total-container {
+  margin: 5% auto;
+  border-top: 1px solid var(--black-low-opacity);
+  border-bottom: 1px solid var(--black-low-opacity);
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 
 #container .btn,
@@ -93,7 +107,7 @@ h2 {
   font-size: 1.3rem;
 }
 
-.hide {
+.hidden {
   display: none;
 }
 
