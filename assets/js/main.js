@@ -13,7 +13,7 @@ const createTask = (taskDescription, taskIsDone) => {
 
   const doneButton = createElement('button', 'done-button me-1 btn btn-success', '<i class="bi bi-check2"></i>');
   const deleteButton = createElement('button', 'delete-button btn btn-danger', '<i class="bi bi-trash"></i>');
-  const buttonsContainer = createElement('div', 'buttons-container me-1', doneButton + deleteButton);
+  const buttonsContainer = createElement('div', 'buttons-container me-1 d-flex', doneButton + deleteButton);
 
   return `<div class="${taskClass}">${taskDescriptionEl}${buttonsContainer}</div>`;
 };
