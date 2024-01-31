@@ -9,7 +9,7 @@ html {
   --white: #fff;
   --black-low-opacity: rgba(0, 0, 0, .2);
   --red: #f66;
-  --green: #6f6;
+  --green: #1f1;
   --blue: #66f;
 }
 
@@ -62,8 +62,12 @@ body {
   border: 1px solid var(--black-low-opacity);
   border-radius: .5em;
   flex-grow: 7;
-  height: 2.6em;
+  height: 3.3em;
   padding: .3em;
+}
+
+#add-task-input::placeholder {
+  font-size: 1rem;
 }
 
 #add-task-button {
@@ -79,6 +83,7 @@ body {
 #add-task-button:hover {
   background-color: var(--blue);
   color: var(--white);
+  cursor: pointer;
 }
 
 #add-task-button:active {
@@ -93,16 +98,67 @@ body {
   padding-bottom: .7em;
 }
 
-.task {
+#tasks-container {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+}
 
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--black-low-opacity);
+  padding: .3em;
+  height: 3em;
+  border-radius: .5em;
+}
+
+.buttons-wrapper {
+  display: flex;
+  gap: .3em;
 }
 
 .complete-task-button {
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  background-color: var(--white);
+  font-size: 1.3rem;
+  border-radius: 50%;
+  transition: background-color .5s ease;
+  width: 1.7em;
+  height: 1.7em;
+}
 
+.complete-task-button:hover {
+  background-color: var(--blue);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.complete-task-button:active {
+  transform: scale(.95);
 }
 
 .delete-task-button {
+  border: 1px solid var(--red);
+  color: var(--red);
+  background-color: var(--white);
+  font-size: 1.3rem;
+  border-radius: 50%;
+  transition: background-color .5s ease;
+  width: 1.7em;
+  height: 1.7em;
+}
 
+.delete-task-button:hover {
+  background-color: var(--red);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.delete-task-button:active {
+  transform: scale(.95);
 }
 
 #remove-complete-tasks-button-container {
@@ -115,6 +171,7 @@ body {
   padding: .5em;
   border-radius: .5em;
   background-color: transparent;
+  font-size: 1rem;
   color: var(--red);
   transition: background-color .5s ease;
 }
@@ -122,24 +179,11 @@ body {
 #remove-complete-tasks-button:hover {
   background-color: var(--red);
   color: var(--white);
+  cursor: pointer;
 }
 
 #remove-complete-tasks-button:active {
   transform: scale(.95);
-}
-
-#container .btn,
-.task,
-.btn:hover,
-.task:hover,
-.task.done,
-.task.done > span,
-.hide {
-  transition: .3s ease-in;
-}
-
-h2 {
-  font-size: 1.3rem;
 }
 
 .hidden {
@@ -151,22 +195,16 @@ h2 {
 }
 
 .task.done {
-  background-color: var(--bs-info);
+  background-color: var(--green);
 }
 
 .task.done > span {
   text-decoration: line-through;
 }
 
-@media screen and (min-width: 768px) { /* Telas médias */
+/* Breakpoint para tablets em diante */
+@media screen and (min-width: 768px) {
   body {
     background-image: url('../img/bg.jpg');
-  }
-}
-
-@media screen and (min-width: 992px) { /* Telas largas */
-  .task:hover {
-    cursor: pointer;
-    background-color: #ccc;
   }
 }

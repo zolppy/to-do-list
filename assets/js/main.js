@@ -8,12 +8,12 @@ const createElement = (tag, className, content) => {
 };
 
 const createTask = (taskDescription, taskIsDone) => {
-  const taskClass = `d-flex justify-content-between align-items-center mt-1 py-1 rounded-3 border border-black task${taskIsDone ? ' done' : ''}`;
-  const taskDescriptionEl = createElement('span', 'ms-1', taskDescription);
+  const taskClass = `task${taskIsDone ? ' done' : ''}`;
+  const taskDescriptionEl = createElement('span', 'task-description', taskDescription);
 
-  const doneButton = createElement('button', 'done-button me-1 btn btn-success', '<i class="bi bi-check2"></i>');
-  const deleteButton = createElement('button', 'delete-button btn btn-danger', '<i class="bi bi-trash"></i>');
-  const buttonsContainer = createElement('div', 'buttons-container me-1 d-flex', doneButton + deleteButton);
+  const doneButton = createElement('button', 'complete-task-button', '<i class="bi bi-check2"></i>');
+  const deleteButton = createElement('button', 'delete-task-button', '<i class="bi bi-trash"></i>');
+  const buttonsContainer = createElement('div', 'buttons-wrapper', doneButton + deleteButton);
 
   return `<div class="${taskClass}">${taskDescriptionEl}${buttonsContainer}</div>`;
 };
@@ -113,11 +113,14 @@ const completeTask = (taskElement) => {
 
 const handleTaskButtonClick = (e) => {
   const taskElement = e.target.closest('.task');
-  if (e.target.classList.contains('done-button')) {
+  
+  if (e.target.closest(".complete-task-button")) {
+    console.log("botão de completar");
     completeTask(taskElement);
   }
-
-  if (e.target.classList.contains('delete-button')) {
+  
+  if (e.target.closest(".delete-task-button")) {
+    console.log("botão de remover");
     removeTask(taskElement);
   }
 };
