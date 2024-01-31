@@ -17,10 +17,8 @@ Aplicação com interface intuitiva e agradável, construída a partir de boas p
 * HTML5;
 * CSS3;
 * JavaScript;
-* Bootstrap.
 
 ## Principais conceitos ou tecnologias que podem vir a serem utilizados
 * React;
 * Typescript;
-* BEM;
 * SCSS.
