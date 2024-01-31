@@ -67,6 +67,7 @@ body {
   font-size: 1.3rem;
   border-radius: 50%;
   flex-grow: 1;
+  transition: background-color .5s ease;
 }
 
 #add-task-button:hover {
