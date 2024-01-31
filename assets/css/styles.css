@@ -5,12 +5,12 @@ html {
 }
 
 :root {
-  --black: #333;
-  --white: #fff;
+  --black: #000;
   --black-low-opacity: rgba(0, 0, 0, .3);
-  --red: #f66;
-  --green: #1f1;
   --blue: #66f;
+  --green: #1f1;
+  --red: #f66;
+  --white: #fff;
 }
 
 * {
@@ -68,31 +68,37 @@ body {
   padding: .3em;
 }
 
-#add-task-button {
-  color: var(--white);
-  background-color: var(--blue);
-  font-size: 1.3rem;
-  border-radius: 50%;
-  flex-grow: 1;
-  transition: background-color .5s ease;
+button {
   border: none;
+  border-radius: 50%;
+  color: var(--white); 
+  font-size: 1.3rem;
+  transition: background-color .5s ease;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(.95);
+}
+
+#add-task-button {
+  background-color: var(--blue);
+  flex-grow: 1;
 }
 
 #add-task-button:hover {
   background-color: blue;
-  cursor: pointer;
-}
-
-#add-task-button:active {
-  transform: scale(.95);
 }
 
 #completed-tasks-total-container {
-  margin: 1.5em auto;
-  border-top: 1px solid var(--black-low-opacity);
   border-bottom: 1px solid var(--black-low-opacity);
-  padding-top: .7em;
+  border-top: 1px solid var(--black-low-opacity);
+  margin: 1.5em auto;
   padding-bottom: .7em;
+  padding-top: .7em;
 }
 
 #tasks-container {
@@ -102,13 +108,13 @@ body {
 }
 
 .task {
+  border: 1px solid var(--black-low-opacity);
+  border-radius: .5em;
+  height: 3em;
+  padding: .3em;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid var(--black-low-opacity);
-  padding: .3em;
-  height: 3em;
-  border-radius: .5em;
 }
 
 .buttons-wrapper {
@@ -116,44 +122,29 @@ body {
   gap: .3em;
 }
 
-.complete-task-button {
-  color: var(--white);
-  background-color: var(--blue);
-  border: none;
-  font-size: 1.3rem;
-  border-radius: 50%;
-  transition: background-color .5s ease;
-  width: 1.7em;
+.complete-task-button,
+.delete-task-button {
   height: 1.7em;
+  width: 1.7em;
+}
+
+.complete-task-button {
+  background-color: var(--blue);
 }
 
 .complete-task-button:hover {
   background-color: blue;
-  cursor: pointer;
 }
 
-.complete-task-button:active {
-  transform: scale(.95);
-}
-
-.delete-task-button {
-  border: none;
-  color: var(--white);
+.delete-task-button,
+#remove-complete-tasks-button {
   background-color: var(--red);
-  font-size: 1.3rem;
-  border-radius: 50%;
-  transition: background-color .5s ease;
-  width: 1.7em;
-  height: 1.7em;
+
 }
 
-.delete-task-button:hover {
+.delete-task-button:hover,
+#remove-complete-tasks-button:hover {
   background-color: red;
-  cursor: pointer;
-}
-
-.delete-task-button:active {
-  transform: scale(.95);
 }
 
 #remove-complete-tasks-button-container {
@@ -161,23 +152,10 @@ body {
 }
 
 #remove-complete-tasks-button {
-  border: none;
-  width: 100%;
-  padding: .5em;
   border-radius: .5em;
-  background-color: var(--red);
   font-size: 1rem;
-  color: var(--white);
-  transition: background-color .5s ease;
-}
-
-#remove-complete-tasks-button:hover {
-  background-color: red;
-  cursor: pointer;
-}
-
-#remove-complete-tasks-button:active {
-  transform: scale(.95);
+  padding: .5em;
+  width: 100%;
 }
 
 .hidden {
@@ -196,7 +174,6 @@ body {
   text-decoration: line-through;
 }
 
-/* Breakpoint para tablets em diante */
 @media screen and (min-width: 768px) {
   body {
     background-image: url('../img/bg.jpg');
