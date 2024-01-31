@@ -69,18 +69,17 @@ body {
 }
 
 #add-task-button {
-  border: 1px solid var(--blue);
-  color: var(--blue);
-  background-color: var(--white);
+  color: var(--white);
+  background-color: var(--blue);
   font-size: 1.3rem;
   border-radius: 50%;
   flex-grow: 1;
   transition: background-color .5s ease;
+  border: none;
 }
 
 #add-task-button:hover {
-  background-color: var(--blue);
-  color: var(--white);
+  background-color: blue;
   cursor: pointer;
 }
 
@@ -118,9 +117,9 @@ body {
 }
 
 .complete-task-button {
-  border: 1px solid var(--blue);
-  color: var(--blue);
-  background-color: var(--white);
+  color: var(--white);
+  background-color: var(--blue);
+  border: none;
   font-size: 1.3rem;
   border-radius: 50%;
   transition: background-color .5s ease;
@@ -129,8 +128,7 @@ body {
 }
 
 .complete-task-button:hover {
-  background-color: var(--blue);
-  color: var(--white);
+  background-color: blue;
   cursor: pointer;
 }
 
@@ -139,9 +137,9 @@ body {
 }
 
 .delete-task-button {
-  border: 1px solid var(--red);
-  color: var(--red);
-  background-color: var(--white);
+  border: none;
+  color: var(--white);
+  background-color: var(--red);
   font-size: 1.3rem;
   border-radius: 50%;
   transition: background-color .5s ease;
@@ -150,8 +148,7 @@ body {
 }
 
 .delete-task-button:hover {
-  background-color: var(--red);
-  color: var(--white);
+  background-color: red;
   cursor: pointer;
 }
 
@@ -164,19 +161,18 @@ body {
 }
 
 #remove-complete-tasks-button {
-  border: 1px solid var(--red);
+  border: none;
   width: 100%;
   padding: .5em;
   border-radius: .5em;
-  background-color: transparent;
+  background-color: var(--red);
   font-size: 1rem;
-  color: var(--red);
+  color: var(--white);
   transition: background-color .5s ease;
 }
 
 #remove-complete-tasks-button:hover {
-  background-color: var(--red);
-  color: var(--white);
+  background-color: red;
   cursor: pointer;
 }
 
