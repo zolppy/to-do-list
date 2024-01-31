@@ -7,7 +7,7 @@ html {
 :root {
   --black: #333;
   --white: #fff;
-  --black-low-opacity: rgba(0, 0, 0, .2);
+  --black-low-opacity: rgba(0, 0, 0, .3);
   --red: #f66;
   --green: #1f1;
   --blue: #66f;
@@ -61,13 +61,11 @@ body {
 #add-task-input {
   border: 1px solid var(--black-low-opacity);
   border-radius: .5em;
-  flex-grow: 7;
-  height: 3.3em;
-  padding: .3em;
-}
-
-#add-task-input::placeholder {
+  font-family: 'Comfortaa', sans-serif;
   font-size: 1rem;
+  flex-grow: 7;
+  height: 3em;
+  padding: .3em;
 }
 
 #add-task-button {
