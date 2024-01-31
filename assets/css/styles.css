@@ -34,7 +34,20 @@ body {
   width: 96%;
 }
 
-#to-do-list-container .btn,
+#main-title,
+#secondary-title {
+  text-align: center;
+}
+
+#main-title {
+  font-weight: 600;
+}
+
+#secondary-title {
+  margin: 1em 0 .6em 0;
+}
+
+#container .btn,
 .task,
 .btn:hover,
 .task:hover,
