@@ -33,10 +33,10 @@ body {
 #container {
   background-color: var(--white);
   border-radius: 15px;
-  margin: 2% auto;
+  margin: .6em auto;
   max-width: 550px;
   min-width: 320px;
-  padding: 2%;
+  padding: .6em;
   width: 96%;
 }
 
@@ -55,6 +55,7 @@ body {
 
 #add-task-wrapper {
   display: flex;
+  align-items: center;
   gap: .3em;
 }
 
@@ -63,7 +64,7 @@ body {
   border-radius: .5em;
   font-family: 'Comfortaa', sans-serif;
   font-size: 1rem;
-  flex-grow: 7;
+  flex-grow: 1;
   height: 3em;
   padding: .3em;
 }
@@ -85,8 +86,9 @@ button:active {
 }
 
 #add-task-button {
+  width: 2.2em;
+  height: 2.2em;
   background-color: var(--blue);
-  flex-grow: 1;
 }
 
 #add-task-button:hover {
