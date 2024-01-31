@@ -23,19 +23,18 @@
     <div id="container">
       <h1 id="main-title">Lista de Tarefas</h1>
       <h2 id="secondary-title">Informe tarefas abaixo</h2>
-      <form autocomplete="off">
-        <div class="d-flex">
-          <input
-            type="text"
-            class="me-1 form-control" id="task-input"
-            aria-describedby="Informe uma tarefa a realizar"
-            placeholder="Ler um livro"
-          />
-          <button id="add-task-button" type="button" class="btn btn-primary" aria-label="Adicionar tarefa">
-            <i class="bi bi-plus-lg"></i>
-          </button>
-        </div>
-      </form>
+      <div id="add-task-wrapper">
+        <input
+          type="text"
+          id="add-task-input"
+          aria-describedby="Informe uma tarefa a realizar"
+          placeholder="Ler um livro"
+          autocomplete="off"
+        />
+        <button id="add-task-button" type="button" aria-label="Adicionar tarefa">
+          <i class="bi bi-plus-lg"></i>
+        </button>
+      </div>
       <hr class="horizontal-line hide mb-1 mt-4">
       <div id="result-container" class="hide rounded-3">
         <span id="result"></span>

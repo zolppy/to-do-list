@@ -47,6 +47,37 @@ body {
   margin: 1em 0 .6em 0;
 }
 
+#add-task-wrapper {
+  display: flex;
+  gap: .3em;
+}
+
+#add-task-input {
+  border: 1px solid rgba(0, 0, 0, .2);
+  border-radius: .5em;
+  flex-grow: 7;
+  height: 2.6em;
+  padding: .3em;
+}
+
+#add-task-button {
+  border: 1px solid #66f;
+  color: #66f;
+  background-color: #fff;
+  font-size: 1.3rem;
+  border-radius: 50%;
+  flex-grow: 1;
+}
+
+#add-task-button:hover {
+  background-color: #66f;
+  color: #fff;
+}
+
+#add-task-button:active {
+  transform: scale(.95);
+}
+
 #container .btn,
 .task,
 .btn:hover,

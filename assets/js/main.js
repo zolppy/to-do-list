@@ -23,7 +23,7 @@ const updateLocalStorage = () => {
 };
 
 const addTask = () => {
-  const taskInputElement = document.querySelector('#task-input');
+  const taskInputElement = document.querySelector('#add-task-input');
   let taskDescription = taskInputElement.value;
   let taskDescriptionTreated = taskDescription.charAt(0).toUpperCase() + taskDescription.slice(1);
 
