@@ -20,36 +20,34 @@
 </head>
 <body>
   <main>
-    <div class="container-fluid">
-      <div id="to-do-list-container" class="p-2 rounded-4 mx-auto mt-3 shadow-lg">
-        <h1 class="fw-bold text-center">Lista de Tarefas</h1>
-        <h2 class="text-center my-4">Informe tarefas abaixo</h2>
-        <form autocomplete="off">
-          <div class="d-flex">
-            <input
-              type="text"
-              class="me-1 form-control" id="task-input"
-              aria-describedby="Informe uma tarefa a realizar"
-              placeholder="Ler um livro"
-            />
-            <button id="add-task-button" type="button" class="btn btn-primary" aria-label="Adicionar tarefa">
-              <i class="bi bi-plus-lg"></i>
-            </button>
-          </div>
-        </form>
-        <hr class="horizontal-line hide mb-1 mt-4">
-        <div id="result-container" class="hide rounded-3">
-          <span id="result"></span>
-        </div>
-        <hr class="horizontal-line hide mb-4 mt-1">
-        <div id="tasks-container" class="mt-4">
-          <!-- Tarefas aqui -->
-        </div>
-        <div id="remove-complete-tasks-button-container" class="mt-4 hide">
-          <button id="remove-complete-tasks-button" type="button" class="btn btn-danger w-100">
-            <span>Remover tarefas concluídas</span>
+    <div id="container">
+      <h1 class="fw-bold text-center">Lista de Tarefas</h1>
+      <h2 class="text-center my-4">Informe tarefas abaixo</h2>
+      <form autocomplete="off">
+        <div class="d-flex">
+          <input
+            type="text"
+            class="me-1 form-control" id="task-input"
+            aria-describedby="Informe uma tarefa a realizar"
+            placeholder="Ler um livro"
+          />
+          <button id="add-task-button" type="button" class="btn btn-primary" aria-label="Adicionar tarefa">
+            <i class="bi bi-plus-lg"></i>
           </button>
         </div>
+      </form>
+      <hr class="horizontal-line hide mb-1 mt-4">
+      <div id="result-container" class="hide rounded-3">
+        <span id="result"></span>
+      </div>
+      <hr class="horizontal-line hide mb-4 mt-1">
+      <div id="tasks-container" class="mt-4">
+        <!-- Tarefas aqui -->
+      </div>
+      <div id="remove-complete-tasks-button-container" class="mt-4 hide">
+        <button id="remove-complete-tasks-button" type="button" class="btn btn-danger w-100">
+          <span>Remover tarefas concluídas</span>
+        </button>
       </div>
     </div>
   </main>
