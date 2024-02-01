@@ -1,6 +1,7 @@
 const addTaskButton = document.querySelector('#add-task-button');
 const tasksContainer = document.querySelector('#tasks-container');
 const removeCompleteTasksButton = document.querySelector('#remove-complete-tasks-button');
+const addTaskInput = document.querySelector("#add-task-input");
 const tasks = [];
 
 const createElement = (tag, className, content) => {
@@ -115,12 +116,10 @@ const handleTaskButtonClick = (e) => {
   const taskElement = e.target.closest('.task');
   
   if (e.target.closest(".complete-task-button")) {
-    console.log("botão de completar");
     completeTask(taskElement);
   }
   
   if (e.target.closest(".delete-task-button")) {
-    console.log("botão de remover");
     removeTask(taskElement);
   }
 };
@@ -154,5 +153,11 @@ removeCompleteTasksButton.addEventListener('click', () => {
     checkCompletedTasks();
     updateDisplayResults();
     reloadPageIfNoTasks();
+  }
+});
+
+addTaskInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    addTask();
   }
 });
