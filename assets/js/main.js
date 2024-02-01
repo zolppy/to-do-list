@@ -39,7 +39,7 @@ const addTask = () => {
 
   tasksContainer.insertAdjacentHTML('afterbegin', newTask);
 
-  updateDisplayResults();
+  updateCategories();
 };
 
 const removeTask = (taskElement, mode = "no-queit") => {
@@ -55,8 +55,7 @@ const removeTask = (taskElement, mode = "no-queit") => {
       taskElement.remove();
   
       checkCompletedTasks();
-      updateDisplayResults();
-      reloadPageIfNoTasks();
+      updateCategories();
     }
   } else {
     const index = Array.from(tasksContainer.children).indexOf(taskElement);
@@ -69,8 +68,7 @@ const removeTask = (taskElement, mode = "no-queit") => {
     taskElement.remove();
 
     checkCompletedTasks();
-    updateDisplayResults();
-    reloadPageIfNoTasks();
+    updateCategories();
   }
 };
 
@@ -81,23 +79,17 @@ const checkCompletedTasks = () => {
   removeCompleteTasksButtonContainer.classList.toggle('hidden', doneTaskElements.length === 0);
 };
 
-const updateDisplayResults = () => {
-  const tasksTotal = document.querySelectorAll('.task').length;
+const updateCategories = () => {
+  let allTotal = document.querySelectorAll(".task").length;
+  let doneTotal = document.querySelectorAll(".done").length;
+  let inProgressTotal = allTotal - doneTotal;
+  const allEl = document.querySelector("#all-total");
+  const doneEl = document.querySelector("#done-total");
+  const inProgressEl = document.querySelector("#in-progress-total");
 
-  if (tasksTotal > 0) {
-    const resultsContainer = document.querySelector('#completed-tasks-total-container');
-    const resultElement = document.querySelector('#completed-tasks-total');
-    const tasksDone = document.querySelectorAll('.done').length;
-
-    resultElement.textContent = `Completas: ${tasksDone}/${tasksTotal}`;
-    resultsContainer.classList.remove('hidden');
-  }
-};
-
-const reloadPageIfNoTasks = () => {
-  if (tasksContainer.children.length === 0) {
-    location.reload();
-  }
+  allEl.textContent = allTotal;
+  doneEl.textContent = doneTotal;
+  inProgressEl.textContent = inProgressTotal;
 };
 
 const completeTask = (taskElement) => {
@@ -110,7 +102,7 @@ const completeTask = (taskElement) => {
 
   taskElement.classList.toggle('done');
   checkCompletedTasks();
-  updateDisplayResults();
+  updateCategories();
 };
 
 const editTask = (taskElement) => {
@@ -160,7 +152,7 @@ window.addEventListener('load', () => {
     }
 
     checkCompletedTasks();
-    updateDisplayResults();
+    updateCategories();
   }
 });
 
@@ -173,8 +165,7 @@ removeCompleteTasksButton.addEventListener('click', () => {
     });
 
     checkCompletedTasks();
-    updateDisplayResults();
-    reloadPageIfNoTasks();
+    updateCategories();
   }
 });
 

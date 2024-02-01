@@ -32,12 +32,21 @@
           <i class="bi bi-plus-lg"></i>
         </button>
       </div>
-      <div id="completed-tasks-total-container" class="hidden">
-        <span id="completed-tasks-total"></span>
+      <div id="categories">
+        <div id="all-container" class="category">
+          Todas
+          <span id="all-total">0</span>
+        </div>
+        <div id="done-container" class="category">
+          Concluídas
+          <span id="done-total">0</span>
+        </div>
+        <div id="in-progress-container" class="category">
+          Em progresso
+          <span id="in-progress-total">0</span>
+        </div>
       </div>
-      <div id="tasks-container">
-        <!-- Tarefas aqui -->
-      </div>
+      <div id="tasks-container"></div>
       <div id="remove-complete-tasks-button-container" class="hidden">
         <button id="remove-complete-tasks-button" type="button">
           <span>Remover tarefas concluídas</span>
