@@ -13,9 +13,9 @@ const createTask = (taskDescription, taskIsDone) => {
   const taskDescriptionEl = createElement('span', 'task-description', taskDescription);
   const checkboxInput = `<input type="checkbox" class="task-checkbox" ${taskIsDone ? 'checked' : ''}>`;
   const taskDescriptionWrapper = createElement("div", "description-wrapper", checkboxInput + taskDescriptionEl);
-  const doneButton = createElement('button', 'edit-task-button', '<i class="bi bi-pencil-square"></i>');
+  const editButton = createElement('button', 'edit-task-button', '<i class="bi bi-pencil-square"></i>');
   const deleteButton = createElement('button', 'delete-task-button', '<i class="bi bi-trash"></i>');
-  const buttonsContainer = createElement('div', 'buttons-wrapper', doneButton + deleteButton);
+  const buttonsContainer = createElement('div', 'buttons-wrapper', editButton + deleteButton);
 
   return `<div class="${taskClass}">${taskDescriptionWrapper}${buttonsContainer}</div>`;
 };
@@ -113,15 +113,36 @@ const completeTask = (taskElement) => {
   updateDisplayResults();
 };
 
+const editTask = (taskElement) => {
+  const taskDescriptionElement = taskElement.querySelector('.task-description');
+  const currentTaskDescription = taskDescriptionElement.textContent;
+  const updatedTaskDescription = prompt("Editar descrição da tarefa:", currentTaskDescription);
+
+  if (updatedTaskDescription !== null) {
+    const index = Array.from(tasksContainer.children).indexOf(taskElement);
+
+    if (index !== -1) {
+      tasks[index].text = updatedTaskDescription;
+      updateLocalStorage();
+    }
+
+    taskDescriptionElement.textContent = updatedTaskDescription;
+  }
+};
+
 const handleTaskButtonClick = (e) => {
   const taskElement = e.target.closest('.task');
-  
+
   if (e.target.closest(".task-checkbox")) {
     completeTask(taskElement);
   }
-  
+
   if (e.target.closest(".delete-task-button")) {
     removeTask(taskElement);
+  }
+
+  if (e.target.closest(".edit-task-button")) {
+    editTask(taskElement);
   }
 };
 
