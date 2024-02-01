@@ -11,12 +11,13 @@ const createElement = (tag, className, content) => {
 const createTask = (taskDescription, taskIsDone) => {
   const taskClass = `task${taskIsDone ? ' done' : ''}`;
   const taskDescriptionEl = createElement('span', 'task-description', taskDescription);
-
-  const doneButton = createElement('button', 'complete-task-button', '<i class="bi bi-check2"></i>');
+  const checkboxInput = `<input type="checkbox" class="task-checkbox" ${taskIsDone ? 'checked' : ''}>`;
+  const taskDescriptionWrapper = createElement("div", "description-wrapper", checkboxInput + taskDescriptionEl);
+  const doneButton = createElement('button', 'edit-task-button', '<i class="bi bi-pencil-square"></i>');
   const deleteButton = createElement('button', 'delete-task-button', '<i class="bi bi-trash"></i>');
   const buttonsContainer = createElement('div', 'buttons-wrapper', doneButton + deleteButton);
 
-  return `<div class="${taskClass}">${taskDescriptionEl}${buttonsContainer}</div>`;
+  return `<div class="${taskClass}">${taskDescriptionWrapper}${buttonsContainer}</div>`;
 };
 
 const updateLocalStorage = () => {
@@ -115,7 +116,7 @@ const completeTask = (taskElement) => {
 const handleTaskButtonClick = (e) => {
   const taskElement = e.target.closest('.task');
   
-  if (e.target.closest(".complete-task-button")) {
+  if (e.target.closest(".task-checkbox")) {
     completeTask(taskElement);
   }
   

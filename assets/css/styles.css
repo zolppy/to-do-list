@@ -119,22 +119,27 @@ button:active {
   justify-content: space-between;
 }
 
+.description-wrapper {
+  display: flex;
+  gap: .5em;
+}
+
 .buttons-wrapper {
   display: flex;
   gap: .3em;
 }
 
-.complete-task-button,
+.edit-task-button,
 .delete-task-button {
   height: 1.7em;
   width: 1.7em;
 }
 
-.complete-task-button {
+.edit-task-button {
   background-color: var(--blue);
 }
 
-.complete-task-button:hover {
+.edit-task-button:hover {
   background-color: blue;
 }
 
@@ -172,7 +177,7 @@ button:active {
   background-color: var(--green);
 }
 
-.task.done > span {
+.task.done .task-description {
   text-decoration: line-through;
 }
 
