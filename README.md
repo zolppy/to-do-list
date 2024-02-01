@@ -10,7 +10,6 @@ Aplicação com interface intuitiva e agradável, construída a partir de boas p
 
 ## Melhorias futuras
 * Editar tarefas;
-* Adicionar tarefas por meio da tecla enter do teclado;
 * Pesquisar tarefas por meio das categorias "todas", "concluídas" e "em andamento";
 * Interação de concluir e desconcluir tarefas por meio de checkbox;
 
