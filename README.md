@@ -33,7 +33,7 @@ firefox index.html
 
 **Demo:**
 
-A
+Acesse o projeto em: https://zolppy.github.io/to-do-list/
 
 **Tecnologias utilizadas:**
 
