@@ -1,19 +1,64 @@
-# To-do List
+## Lista de Tarefas 
 
-Aplicação com interface intuitiva e agradável, construída a partir de boas práticas de desenvolvimento de software, que permite criação e gerenciamento de tarefas.
+**Descrição:**
 
-## O que tem ou pode realizar
-* Criar tarefa;
-* Editar tarefa;
-* Marcar tarefa como concluída ou não concluída;
-* Remover tarefa;
-* Remover tarefas concluídas.
+Este projeto é um aplicativo simples de lista de tarefas que permite gerenciar suas tarefas e atividades de forma eficiente. 
 
-## Melhorias futuras
+**Funcionalidades:**
 
-## Principais conceitos ou tecnologias utilizados
-* HTML5;
-* CSS3;
-* JavaScript;
+* Criar, editar e excluir tarefas
+* Marcar tarefas como concluídas
+* Excluir todas tarefas concluídas
+* Exibir quantidade de tarefas por status (todas, concluídas, em progresso)
 
-## Principais conceitos ou tecnologias que podem vir a serem utilizados
+**Começando:**
+
+1. Clone o repositório para o seu computador:
+
+```
+git clone https://github.com/zolppy/to-do-list.git
+```
+
+2. Acesse o diretório do repositório:
+
+```
+cd to-do-list
+```
+
+3. Abra o projeto com seu navegador favorito:
+
+```
+firefox index.html
+```
+
+**Demo:**
+
+Demo da Lista de Tarefas: [Abrir](https://zolppy.github.io/to-do-list/)
+
+**Tecnologias utilizadas:**
+
+* HTML5
+* CSS3
+* JavaScript
+* Bootstrap Icons
+* Google Fonts
+
+**Contribuindo:**
+
+Se você deseja contribuir para este projeto, siga estas etapas:
+
+1. Faça um fork do repositório.
+2. Crie uma nova branch para sua modificação.
+3. Faça suas alterações e envie um pull request.
+
+**Licença:**
+
+Este projeto está licenciado sob a licença MIT.
+
+**Agradecimentos:**
+
+* Agradeço a todos que contribuíram para este projeto.
+
+**Contato:**
+
+Se você tiver alguma dúvida ou sugestão, entre em contato comigo através do e-mail: gabriel.lcifba@gmail.com.
