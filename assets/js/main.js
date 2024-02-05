@@ -97,13 +97,23 @@ const completeTask = (taskElement) => {
 
   if (index !== -1) {
     tasks[index].done = !tasks[index].done;
+
+    tasks.sort((a, b) => a.done - b.done);
+
     updateLocalStorage();
   }
 
-  taskElement.classList.toggle('done');
+  tasksContainer.innerHTML = '';
+
+  for (const task of tasks) {
+    const newTask = createTask(task.text, task.done);
+    tasksContainer.insertAdjacentHTML('beforeend', newTask);
+  }
+
   checkCompletedTasks();
   updateCategories();
 }
+
 
 const editTask = (taskElement) => {
   const taskDescriptionElement = taskElement.querySelector('.task-description');
