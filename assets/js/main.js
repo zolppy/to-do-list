@@ -6,7 +6,7 @@ const tasks = [];
 
 const createElement = (tag, className, content) => {
   return `<${tag} class="${className}">${content || ''}</${tag}>`;
-};
+}
 
 const createTask = (taskDescription, taskIsDone) => {
   const taskClass = `task${taskIsDone ? ' done' : ''}`;
@@ -18,11 +18,11 @@ const createTask = (taskDescription, taskIsDone) => {
   const buttonsContainer = createElement('div', 'buttons-wrapper', editButton + deleteButton);
 
   return `<div class="${taskClass}">${taskDescriptionWrapper}${buttonsContainer}</div>`;
-};
+}
 
 const updateLocalStorage = () => {
   localStorage.setItem('tasks', JSON.stringify(tasks));
-};
+}
 
 const addTask = () => {
   const taskInputElement = document.querySelector('#add-task-input');
@@ -40,7 +40,7 @@ const addTask = () => {
   tasksContainer.insertAdjacentHTML('afterbegin', newTask);
 
   updateCategories();
-};
+}
 
 const removeTask = (taskElement, mode = "no-queit") => {
   if (mode !== "quiet") {
@@ -70,14 +70,14 @@ const removeTask = (taskElement, mode = "no-queit") => {
     checkCompletedTasks();
     updateCategories();
   }
-};
+}
 
 const checkCompletedTasks = () => {
   const doneTaskElements = document.querySelectorAll('.done');
   const removeCompleteTasksButtonContainer = document.querySelector('#remove-complete-tasks-button-container');
 
   removeCompleteTasksButtonContainer.classList.toggle('hidden', doneTaskElements.length === 0);
-};
+}
 
 const updateCategories = () => {
   let allTotal = document.querySelectorAll(".task").length;
@@ -90,7 +90,7 @@ const updateCategories = () => {
   allEl.textContent = allTotal;
   doneEl.textContent = doneTotal;
   inProgressEl.textContent = inProgressTotal;
-};
+}
 
 const completeTask = (taskElement) => {
   const index = Array.from(tasksContainer.children).indexOf(taskElement);
@@ -103,7 +103,7 @@ const completeTask = (taskElement) => {
   taskElement.classList.toggle('done');
   checkCompletedTasks();
   updateCategories();
-};
+}
 
 const editTask = (taskElement) => {
   const taskDescriptionElement = taskElement.querySelector('.task-description');
@@ -120,7 +120,7 @@ const editTask = (taskElement) => {
 
     taskDescriptionElement.textContent = updatedTaskDescription;
   }
-};
+}
 
 const handleTaskButtonClick = (e) => {
   const taskElement = e.target.closest('.task');
@@ -136,7 +136,7 @@ const handleTaskButtonClick = (e) => {
   if (e.target.closest(".edit-task-button")) {
     editTask(taskElement);
   }
-};
+}
 
 addTaskButton.addEventListener('click', addTask);
 tasksContainer.addEventListener('click', handleTaskButtonClick);

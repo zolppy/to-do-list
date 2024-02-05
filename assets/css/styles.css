@@ -33,6 +33,7 @@ body {
 #container {
   background-color: var(--white);
   margin: 0 auto;
+  min-height: 100vh;
   max-width: 550px;
   min-width: 320px;
   padding: .6em;
