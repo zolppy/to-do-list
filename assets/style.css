@@ -1,15 +1,16 @@
 @charset "UTF-8";
 
 :root {
-  --blue: #66f;
-  --light-green: #afa;
-  --red: #f66;
+  --blue: #00f;
+  --light-green: #9f9;
+  --red: #f00;
 }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: white;
 }
 
 html {
@@ -30,7 +31,7 @@ body {
   max-width: 550px;
   min-height: 100svh;
   min-width: 320px;
-  padding: .6em;
+  padding: 0.6em;
 }
 
 #main-title,
@@ -40,25 +41,25 @@ body {
 
 #secondary-title {
   font-weight: 400;
-  margin: 1em 0 .6em 0;
+  margin: 1em 0 0.6em 0;
 }
 
 #add-task-wrapper {
   display: flex;
   align-items: center;
-  gap: .3em;
+  gap: 0.3em;
 }
 
 #add-task-input {
   background-color: black;
-  border: 1px solid rgba(255, 255, 255, .2);
-  border-radius: .5em;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5em;
   color: white;
   flex-grow: 1;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   height: 3em;
-  padding: .3em;
+  padding: 0.3em;
 }
 
 button {
@@ -66,15 +67,11 @@ button {
   border-radius: 50%;
   font-family: "Roboto", sans-serif;
   font-size: 1.3rem;
-  transition: background-color .5s ease;
+  transition: background-color 0.5s ease;
 }
 
 button:hover {
   cursor: pointer;
-}
-
-button:active {
-  transform: scale(.95);
 }
 
 #add-task-button {
@@ -89,22 +86,22 @@ button:active {
 
 #categories {
   background-color: #222;
-  border: 1px solid rgba(255, 255, 255, .2);
-  border-radius: .5em;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5em;
   display: flex;
   justify-content: space-around;
   margin: 1.5em auto;
-  padding-bottom: .4em;
-  padding-top: .4em;
+  padding-bottom: 0.4em;
+  padding-top: 0.4em;
 }
 
 .category {
   display: flex;
   align-items: center;
-  border-radius: .5em;
+  border-radius: 0.5em;
   flex-direction: column;
-  gap: .2em;
-  padding: .4em;
+  gap: 0.2em;
+  padding: 0.4em;
 }
 
 .info-total {
@@ -115,17 +112,17 @@ button:active {
 #tasks-container {
   display: flex;
   flex-direction: column;
-  gap: .5em;
+  gap: 0.5em;
 }
 
 .task {
   align-items: center;
-  border: 1px solid rgba(255, 255, 255, .2);
-  border-radius: .5em;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5em;
   display: flex;
   height: 3em;
   justify-content: space-between;
-  padding: .3em;
+  padding: 0.3em;
 }
 
 .task.done {
@@ -139,12 +136,12 @@ button:active {
 
 .description-wrapper {
   display: flex;
-  gap: .5em;
+  gap: 0.5em;
 }
 
 .buttons-wrapper {
   display: flex;
-  gap: .3em;
+  gap: 0.3em;
 }
 
 .edit-task-button,
@@ -164,7 +161,6 @@ button:active {
 .delete-task-button,
 #remove-complete-tasks-button {
   background-color: var(--red);
-
 }
 
 .delete-task-button:hover,
@@ -177,9 +173,9 @@ button:active {
 }
 
 #remove-complete-tasks-button {
-  border-radius: .5em;
+  border-radius: 0.5em;
   font-size: 1rem;
-  padding: .7em;
+  padding: 0.7em;
   width: 100%;
 }
 
