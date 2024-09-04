@@ -25,6 +25,19 @@ body {
   font-weight: 400;
 }
 
+header {
+  background-color: transparent;
+  backdrop-filter: blur(50px);
+  max-width: 550px;
+  min-width: 320px;
+  width: 100%;
+  padding: 0.6em;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 #container {
   background-color: #000;
   margin: 0 auto;
@@ -32,6 +45,7 @@ body {
   min-height: 100svh;
   min-width: 320px;
   padding: 0.6em;
+  padding-top: 310px;
 }
 
 #main-title,
@@ -51,7 +65,7 @@ body {
 }
 
 #add-task-input {
-  background-color: black;
+  background-color: inherit;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 0.5em;
   color: white;

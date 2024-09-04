@@ -22,39 +22,41 @@
     <script defer src="assets/script.js"></script>
   </head>
   <body>
+    <header>
+      <h1 id="main-title">Lista de Tarefas</h1>
+      <h2 id="secondary-title">Informe tarefas abaixo</h2>
+      <div id="add-task-wrapper">
+        <input
+          type="text"
+          id="add-task-input"
+          aria-describedby="Informe uma tarefa a realizar"
+          placeholder="Ler um livro"
+        />
+        <button
+          id="add-task-button"
+          type="button"
+          aria-label="Adicionar tarefa"
+        >
+          <i class="bi bi-plus-lg"></i>
+        </button>
+      </div>
+      <div id="categories">
+        <div id="all-container" class="category">
+          Todas
+          <span id="all-total" class="info-total">0</span>
+        </div>
+        <div id="in-progress-container" class="category">
+          Em progresso
+          <span id="in-progress-total" class="info-total">0</span>
+        </div>
+        <div id="done-container" class="category">
+          Concluídas
+          <span id="done-total" class="info-total">0</span>
+        </div>
+      </div>
+    </header>
     <main>
       <div id="container">
-        <h1 id="main-title">Lista de Tarefas</h1>
-        <h2 id="secondary-title">Informe tarefas abaixo</h2>
-        <div id="add-task-wrapper">
-          <input
-            type="text"
-            id="add-task-input"
-            aria-describedby="Informe uma tarefa a realizar"
-            placeholder="Ler um livro"
-          />
-          <button
-            id="add-task-button"
-            type="button"
-            aria-label="Adicionar tarefa"
-          >
-            <i class="bi bi-plus-lg"></i>
-          </button>
-        </div>
-        <div id="categories">
-          <div id="all-container" class="category">
-            Todas
-            <span id="all-total" class="info-total">0</span>
-          </div>
-          <div id="in-progress-container" class="category">
-            Em progresso
-            <span id="in-progress-total" class="info-total">0</span>
-          </div>
-          <div id="done-container" class="category">
-            Concluídas
-            <span id="done-total" class="info-total">0</span>
-          </div>
-        </div>
         <div id="tasks-container"></div>
         <div id="remove-complete-tasks-button-container" class="hidden">
           <button id="remove-complete-tasks-button" type="button">
