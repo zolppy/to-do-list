@@ -1,11 +1,3 @@
-@charset "UTF-8";
-
-:root {
-  --blue: #00f;
-  --light-green: #9f9;
-  --red: #f00;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -18,8 +10,8 @@ html {
 }
 
 body {
-  background-color: #222;
-  color: white;
+  background-color: #000;
+  color: #e0e0e0;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -39,7 +31,7 @@ header {
 }
 
 #container {
-  background-color: #000;
+  background-color: #121212;
   margin: 0 auto;
   max-width: 550px;
   min-height: 100svh;
@@ -65,10 +57,10 @@ header {
 }
 
 #add-task-input {
-  background-color: inherit;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: #1c1c1c;
+  border: 1px solid #424242;
   border-radius: 0.5em;
-  color: white;
+  color: #fff;
   flex-grow: 1;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
@@ -76,12 +68,16 @@ header {
   padding: 0.3em;
 }
 
+#add-task-input::placeholder {
+  color: #757575;
+}
+
 button {
   border: none;
   border-radius: 50%;
   font-family: "Roboto", sans-serif;
   font-size: 1.3rem;
-  transition: background-color 0.5s ease;
+  transition: background-color 0.5s;
 }
 
 button:hover {
@@ -89,18 +85,20 @@ button:hover {
 }
 
 #add-task-button {
-  background-color: var(--blue);
+  background-color: #43a047;
+  color: #fff;
   height: 2.2em;
   width: 2.2em;
 }
 
 #add-task-button:hover {
-  background-color: blue;
+  background-color: #388e3c;
 }
 
 #categories {
-  background-color: #222;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: #263238;
+  color: #b0bec5;
+  border: 1px solid #37474f;
   border-radius: 0.5em;
   display: flex;
   justify-content: space-around;
@@ -130,8 +128,10 @@ button:hover {
 }
 
 .task {
+  background-color: #1c1c1c;
+  color: #e0e0e0;
   align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid #424242;
   border-radius: 0.5em;
   display: flex;
   height: 3em;
@@ -140,11 +140,12 @@ button:hover {
 }
 
 .task.done {
-  background-color: var(--light-green);
+  background-color: #2e7d32;
+  border-color: #388e3c;
 }
 
 .task.done .task-description {
-  color: #777;
+  color: #a5d6a7;
   text-decoration: line-through;
 }
 
@@ -165,21 +166,22 @@ button:hover {
 }
 
 .edit-task-button {
-  background-color: var(--blue);
+  background-color: #1e88e5;
+  color: #fff;
 }
 
 .edit-task-button:hover {
-  background-color: blue;
+  background-color: #1565c0;
 }
 
 .delete-task-button,
 #remove-complete-tasks-button {
-  background-color: var(--red);
+  background-color: #d32f2f;
 }
 
 .delete-task-button:hover,
 #remove-complete-tasks-button:hover {
-  background-color: red;
+  background-color: #b71c1c;
 }
 
 #remove-complete-tasks-button-container {
